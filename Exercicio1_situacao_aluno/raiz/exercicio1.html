@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Situação Aluno</title>
+        <meta charset="utf-8"/>
+        <style>
+            table{
+                width: 500px;
+                height: 250px;
+                border: solid 1px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+            }
+            tr{
+                width: inherit;
+                height: 50px;
+            }
+            #td_titulo{
+                width: inherit;
+                height: inherit;
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 19px;
+                box-sizing: border-box;
+                padding-top: 10px;
+                background-color: #a60707;
+                color: white;
+            }
+            .td_txt{
+               height: inherit; 
+               box-sizing: border-box;
+               padding-top: 10px;
+               padding-left: 25px;
+               font-family: sans-serif;
+               text-transform: capitalize;
+               font-size: 16px; 
+                
+            }
+            #nome, #media{
+                margin-left: 10px;
+            }
+            #calcular{
+                height: 35px;
+                width: 100px;
+                background-color: #a60707;
+                color: white;
+                border-bottom-left-radius: 11px;
+                border-top-right-radius: 11px;
+                font-family: sans-serif;
+            }
+            #calcular:hover{
+                cursor: pointer;
+            }
+            #td_obs{
+               width: inherit;
+               height: inherit;
+            }
+            #icon{
+                height: inherit;
+                width: 50px;
+                background-size: cover;
+                float: left;
+            }
+            #obs{
+                float: left;
+                height: inherit;
+                width: 400px;
+                text-align: center;
+                color: white;     
+            }
+            #obs p{
+               font-family: sans-serif;
+               text-transform: capitalize;
+               font-size: 16px; 
+               width: inherit;
+               color: white;
+            }
+        </style>
+    </head>
+
+    <body id="body">
+        <table>
+            <tr>
+                <td colspan="2" id="td_titulo">
+                    SENAI
+                </td>
+            </tr>
+            <tr>
+                <td class="td_txt">
+                    Nome:<input type="text" id="nome" >
+                </td>
+                <td class="td_txt">
+                  <input type="button" value="calcular" id="calcular">  
+                </td>
+            </tr>
+            <tr>
+                <td class="td_txt">
+                    Média: <input type="text" id="media">
+                </td>
+                <td class="td_txt">
+                    <input type="text" placeholder="Situação do Aluno" id="situacao">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="td_obs">
+                    <div id="icon"></div>
+                    <div id="obs"> </div>
+                </td>
+            </tr>
+        </table>
+
+        <script src="../js/exercicio1.js"></script>
+    </body>
+
+</html>

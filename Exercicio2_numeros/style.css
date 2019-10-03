@@ -1,0 +1,30 @@
+.conteudo{
+    /* Organiza os layouts */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 40vw;
+    height: 35vh;
+    margin: 1vh auto;
+    grid-gap: 15px;
+    padding: 1vw;
+    background-color: #9ec9e9;
+    /* Alinhamento da direita, embaixo e espalhamento da sombra */
+    box-shadow: 5px 5px 18px
+}
+header{
+    text-align: center;
+}
+.entrada, .acao, .saida{
+    display: grid;
+    justify-content: center;
+    width: 40vw;
+}
+.entrada{
+    grid-template-columns: 1fr 1fr;
+    height: 8vh;
+}
+.acao{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    height: 4vh;
+}
