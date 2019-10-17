@@ -1,0 +1,83 @@
+.container{
+    width: 1400px;
+    height: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+body{
+    background-color:#484c4f;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.fonte{
+    font-family: sans-serif, cursive;
+    font-size: 15px;
+}
+/* Logo Pokemon */
+#logo img{
+    width: 400px;
+}
+#logo{
+    margin-left: 500px;
+}
+/* Elementos do formulário */
+#form{
+    margin-top: 40px;
+}
+#input{
+    height: 30px;
+    width: 400px;
+    margin-left: 200px;
+}
+#button{
+    height: 30px;
+    width: 100px;
+    background-color:#e8cf2e;
+    color: #4e5999;
+    border: solid 1px #4e5999;
+}
+/* Conteudo */
+#pokemon{
+    width: 1000px;
+    min-height: 500px;
+    border: solid 1px black;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Informações do Pokemon */
+.pokemon_dados{
+    float: left;
+    width: 800px;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.item{
+    width: inherit;
+    height: 40px;
+    font-size: 19px; 
+}
+
+/* Imagem do Pokemon */
+.pokemon_image{
+    float: left;
+    height: 500px;
+    width: 200px;
+    background-color: #4e5999;
+}
+.pokemon_image img{
+    height: 200px;
+    width: 200px;  
+    background-color: #626a96;
+    border-radius: 130px;
+}
+
+/* Mensagem de erro  */
+#error{
+    display: none;
+}
