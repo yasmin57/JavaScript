@@ -5,47 +5,46 @@ const $url = "https://pokeapi.co/api/v2/pokemon/";
 const $input = document.getElementById("input");
 const $button = document.getElementById("button");
 const $sectionPokemon = document.getElementById("pokemon");
-const $error = document.getElementById("error");
 
 //Variaveis
 var name, 
-    dadosPokemon, 
+    jsonPokemon, 
     html; 
 
 //Função que faz a requisição da API e guarda o retorno na variavel pokemon
 const requisicaoAPI = (url, name) =>{
     fetch(url + name)
-  .then(response => response.json())
-  .then(data => {dadosPokemon = data;})
+  .then(resposta => resposta.json())
+  .then(dados => {jsonPokemon = dados;})
 }
 
 //Função que cria o html
-const criaHtml = () =>{
+const criaHtml = (seletorImage, seletorContainer, seletorItens) =>{
     html = `
-    <div class="pokemon_image">
-        <img src="${dadosPokemon.sprites.front_shiny}" alt="Imagem do ${dadosPokemon.name}">
+    <div ${seletorImage}>
+        <img src="${jsonPokemon.sprites.front_shiny}" alt="Imagem do ${jsonPokemon.name}">
     </div>
-    <table class="pokemon_dados">
+    <table ${seletorContainer}>
         <tr>
-            <td class="item fonte">Name: ${dadosPokemon.name}</td>
+            <td ${seletorItens}><h1> ${jsonPokemon.name}</h1></td>
         </tr>
         <tr>
-            <td class="item fonte">Nº ${dadosPokemon.id}</td>
+            <td ${seletorItens}>Nº ${jsonPokemon.id}</td>
         </tr>
         <tr>
-            <td class="item fonte">Type: ${dadosPokemon.types.map(item => item.type.name).toString()}</td>
+            <td ${seletorItens}>Type: ${jsonPokemon.types.map(item => item.type.name).toString()}</td>
         </tr>
         <tr>
-            <td class="item fonte">Abilities: ${dadosPokemon.abilities.map(item => item.ability.name).toString()}</td>
+            <td ${seletorItens}>Abilities: ${jsonPokemon.abilities.map(item => item.ability.name).toString()}</td>
         </tr>
         <tr>
-            <td class="item fonte">Skills: ${dadosPokemon.moves.map(item => ' ' + item.move.name).toString()}</td>
+            <td ${seletorItens}>Skills: ${jsonPokemon.moves.map(item => ' ' + item.move.name).toString()}</td>
         </tr>
         <tr>
-            <td class="item fonte">Weight: ${dadosPokemon.weight  / 10}kg</td>
+            <td ${seletorItens}>Weight: ${jsonPokemon.weight  / 10}kg</td>
         </tr>
         <tr>
-            <td class="item fonte">Height: ${dadosPokemon.height  / 10}m</td>
+            <td ${seletorItens}>Height: ${jsonPokemon.height  / 10}m</td>
         </tr>
     </table>`;
     return html;
@@ -56,7 +55,7 @@ const mostrarDados = (name) => {
     requisicaoAPI($url, name);
 
     // chamada da função que cria o html
-    $sectionPokemon.innerHTML = criaHtml();
+    $sectionPokemon.innerHTML = criaHtml('class = "pokemon_image"','class = "pokemon_dados"','class = "item fonte"');
 }
 
 
