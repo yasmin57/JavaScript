@@ -47,20 +47,44 @@
             </tr>
             <tr>
                 <td> 
-                    <h4> 3º Passo: Use o método then para resgatar o json </h4>
-                    <p> Descrição:   </p>
-                    <p> Demonstração: fetch(url + 'pikachu'). </p>
+                    <h4> 3º Passo: Use o método then </h4>
+                    <p> Descrição: Transforme a promessa em json e guarde em uma variável  </p>
+                    <p> Demonstração: fetch(url + nome_do_Pokemon)
+                        <br>
+                        .then(resposta => resposta.json())
+                        <br>
+                        .then(dados => {jsonPokemon = dados;}) </p>
                 </td>
             </tr>
-<!--
             <tr>
                 <td> 
-                    <h4> 3º Passo: Crie uma função p/ fazer a requisicao </h4>
-                    <p> Descrição:  </p>
-                    <p> Demonstração:  const $url = "https://pokeapi.co/api/v2/pokemon/";</p>
+                    <h4> Sugestão/Código final </h4>
+                    <p> Descrição: Coloque isso em uma função que receba a URL e o nome do Pokemon</p>
+                    <p> Demonstração: 
+                            <br>
+                            // url da api
+                            <br>
+                            const $url = "https://pokeapi.co/api/v2/pokemon/";
+                            <br>
+                            <br>
+                            // variaveis 
+                            <br>
+                            var name, jsonPokemon;
+                            <br>
+                            <br>
+                            // requisição da API
+                            <br>
+                            const requisicaoAPI = (url, name) =>{
+                            <br>
+                                fetch(url + name)
+                            <br>
+                              .then(resposta => resposta.json())
+                            <br>
+                              .then(dados => {jsonPokemon = dados;})
+                            <br>
+                            } </p>
                 </td>
             </tr>
--->
         </table>
     </body>
 </html>
