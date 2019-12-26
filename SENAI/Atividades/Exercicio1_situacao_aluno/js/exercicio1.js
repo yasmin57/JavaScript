@@ -1,4 +1,4 @@
-//Nota mínima para aluno ser aprovado
+//Nota mínima para o aluno ser aprovado
 const notaminima = 5;
 
 //Resgate das inputs
