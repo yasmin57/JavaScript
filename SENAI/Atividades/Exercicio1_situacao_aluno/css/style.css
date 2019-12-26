@@ -1,0 +1,72 @@
+table{
+    width: 500px;
+    height: 250px;
+    border: solid 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+tr{
+    width: inherit;
+    height: 50px;
+}
+#td_titulo{
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 19px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    background-color: #a60707;
+    color: white;
+}
+.td_txt{
+   height: inherit; 
+   box-sizing: border-box;
+   padding-top: 10px;
+   padding-left: 25px;
+   font-family: sans-serif;
+   text-transform: capitalize;
+   font-size: 16px; 
+    
+}
+#nome, #media{
+    margin-left: 10px;
+}
+#calcular{
+    height: 35px;
+    width: 100px;
+    background-color: #a60707;
+    color: white;
+    border-bottom-left-radius: 11px;
+    border-top-right-radius: 11px;
+    font-family: sans-serif;
+}
+#calcular:hover{
+    cursor: pointer;
+}
+#td_obs{
+   width: inherit;
+   height: inherit;
+}
+#icon{
+    height: inherit;
+    width: 50px;
+    background-size: cover;
+    float: left;
+}
+#mensagem{
+    float: left;
+    height: inherit;
+    width: 400px;
+    text-align: center;
+    color: white;     
+}
+#mensagem p{
+   font-family: sans-serif;
+   text-transform: capitalize;
+   font-size: 16px; 
+   width: inherit;
+   color: white;
+}

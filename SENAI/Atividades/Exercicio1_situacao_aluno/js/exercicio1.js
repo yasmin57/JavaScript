@@ -1,35 +1,61 @@
+//Nota mínima para aluno ser aprovado
 const notaminima = 5;
 
+//Resgate das inputs
 const $nome = document.getElementById("nome");
 const $media = document.getElementById("media");
 const $situacao = document.getElementById("situacao");
 const $calcular = document.getElementById("calcular");
+
+// Resgate dos itens p/ frase extra
+const $res = document.getElementById("resultado");
 const $icon = document.getElementById("icon");
-const $td_obs = document.getElementById("td_obs");
-const $obs = document.getElementById("obs");
-const pEl = document.createElement("p");
-const textElap = document.createTextNode(`Parabéns!`) ;
-const textElre = document.createTextNode("Estude mais da próxima vez");
+const $mensagem = document.getElementById("mensagem");
 
+// Cria textos p/ mensagem
+const textElyes = document.createTextNode(`Parabéns pelo seu desempenho!`) ;
+const textElno = document.createTextNode("Estude mais da próxima vez.");
 
-const  calc = () =>{
-    if( $media.value > notaminima ){
+//Função para avaliar situação do aluno
+const avalia = () => {
+    
+    //verifica se a média digitada é maior ou igual a nota exigida
+    if($media.value >= notaminima){
         $situacao.value ="Está Aprovado!";
-        $td_obs.style = "background: #00a181";
-        $icon.style="background-image: url(../icons/happy.png)";
-        pEl.appendChild(textElap);
-        document.getElementById("obs").appendChild(pEl);
+        mensagem(true);
     }
     else{
         $situacao.value ="Está Reprovado!";
-        $td_obs.style = "background: #a60707";
+        mensagem(false);
+    }
+}
+
+//Função para mandar a mensagem
+function mensagem (valor){
+
+    //Verifica se o elemento tem algum filho e remove
+    while ($mensagem.firstChild){
+        $mensagem.removeChild($mensagem.firstChild);
+    }
+
+    //Cria o elemento (filho) p
+    const p = document.createElement("p");
+
+    //Verifica o valor
+    if(valor){
+        $res.style = "background: #00a181";
+        $icon.style="background-image: url(../icons/happy.png)";
+        p.appendChild(textElyes);
+        return document.getElementById("mensagem").appendChild(p);
+    }
+    else{
+        $res.style = "background: #a60707";
         $icon.style="background-image: url(../icons/sad.png)";
-        pEl.appendChild(textElre);
-        document.getElementById("obs").appendChild(pEl);
+        p.appendChild(textElno);
+        return document.getElementById("mensagem").appendChild(p);
     }
 }
 
 
 
-
-$calcular.addEventListener("click", calc);
+$calcular.addEventListener("click", avalia);
