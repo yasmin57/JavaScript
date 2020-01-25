@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <style>
+            #div1{
+                width: 100px;
+                height: 100px;
+                border: solid 1px black;
+                background-color: #f00;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+        </style>
+        <script>
+            //Alert
+            function mensagem(){
+                alert("Olá");
+            }
+
+            //Muda a cor
+            function mudaCor(obj, cor){
+                obj.style.backgroundColor = cor;
+            }
+
+            function addEventos(){
+                var div = document.getElementById("div1");
+
+                div.addEventListener("click", mensagem);
+                //div.addEventListener("mouseover", mudaCor(div, "#fff")); não funciona
+                
+                div.addEventListener("mouseover", function(event){
+                    mudaCor(div, "#fff");
+                });
+                div.addEventListener("mouseout", function(event){
+                    mudaCor(div, "#f00");
+                })
+            }
+
+            window.addEventListener("load", addEventos);
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <script>
+            
+         </script>
+    </body>
+</html>

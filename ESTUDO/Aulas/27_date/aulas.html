@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <script>
+            //DATE
+            
+            var date, sem, dia, mes, ano, hora, min, seg;
+
+            date = new Date();
+            sem = date.getDay(); //dia da semana 0 = domingo
+            dia = date.getDate(); //dia do mês
+            mes = date.getMonth(); //mês 0 = janeiro
+            ano = date.getFullYear()// ano com 4 digitos
+            hora = date.getHours() //hora
+            min = date.getMinutes()//minutos
+            seg = date.getSeconds //segundos
+
+            var dtEUA, dtBR, dtAndHrBR;
+            dtEUA = date.toDateString(); // sem mm dd aaaa
+            dtBR = date.toLocaleDateString(); // dd/mm/aaaa
+            dtAndHrBR = date.toLocaleString(); // dd/mm/aaaa hh:mm:ss 
+
+            document.write(dtAndHrBR);
+        </script>
+    </head>
+    <body>
+       
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <script>
+            /*
+                Comandos: Push -> insere no final do array, 
+                          unshift -> insere no inicio do array,
+                          pop -> remove o ultimo elemento do array,
+                          shift -> remove o primeiro elemento do array
+                          splice -> remove de qq posição do array
+            */
+            
+            var mochila = [];
+
+            mochila.push("Faca");
+            mochila.push("Corda");
+            mochila.push("Chave");
+            mochila.push("Lanterna");
+            mochila.unshift("Pedra");
+
+            mochila.shift();
+            mochila.splice(2, 1); //A partir de qual indice deve remover 
+            mochila.pop();          // e quantos elementos devem ser removidos
+            
+
+            var tamanho = mochila.length;
+
+            for(var cont = 0; cont < tamanho ; cont++){
+                document.write(mochila[cont]+"<br>");
+            }       
+           
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

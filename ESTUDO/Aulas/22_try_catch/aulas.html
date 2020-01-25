@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <script>
+            // Try, Cath e Finally
+            //Try -> código que pode gerar erro
+            //Cath -> código p/ tratamento do erro
+            //finally -> bloco não obrigatório, executa se houver erro ou não
+
+            var num; //máximo 10
+
+            //Erro pode ser gerado manualmente (como no exemplo) ou não
+            try{
+                num = prompt("Digite um número");
+
+                //verifica se é maior que 10
+                if(num>10){
+                    //gera uma exceção/erro
+                    throw new Error("Valor inválido bb");
+                }
+
+                //Código caso não ocorra um erro
+                document.write("Valor: "+num);
+
+            }
+            catch(e){ //tratamento de exceções
+                document.write("Error: "+e.message);
+            }
+            finally{
+                document.write("<br> Fim do tratamento");
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

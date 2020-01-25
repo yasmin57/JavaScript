@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <script>
+            //getElementsByTagName -> retorna um vetor com todos os elementos 
+        </script>
+    </head>
+    <body>
+        <p>Teste</p>
+        <p>Olá</p>
+        <p>Curso</p>
+        <p>Javascript</p>
+
+        <script>
+            // Quando o parâmetro é asterisco * o método captura todos os elementos
+             const tagsP = document.getElementsByTagName("p");
+
+             var tam = tagsP.length;
+
+             for(i = 0; i <= tam; i++){
+                 tagsP[i].style.color="red";
+             }
+        </script>
+    </body>
+</html>

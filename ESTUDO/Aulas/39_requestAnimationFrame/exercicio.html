@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <style>
+           #jogador{
+               position: absolute;
+               top: 50px;
+               left: 10px;
+               width: 70px;
+               height: 70px;
+               background-color: #f00;
+               border: solid 1px black;
+           }
+        </style>
+        <script>
+            //Quando clica para, quando clica de novo inicia
+
+            var estado, jog, anima, vel, dx, dy, px, py, btngo, btnstop;
+
+            estado = 0;
+
+            //Função que chama as funções
+            function chamadas(){
+                vel = 5;
+                dx = 1;
+                px = 0;
+                estado = 1;
+
+                jog = document.getElementById("jogador");
+                jog.addEventListener("click", controle);
+
+                btngo = document.getElementById("go");
+                btngo.addEventListener("click", function(){
+                    cancelAnimationFrame(anima);
+                    estado = 1;
+                    controle();
+                });
+
+                btnstop = document.getElementById("stop");
+                btnstop.addEventListener("click", function(){
+                    cancelAnimationFrame(anima);
+                });
+            }
+
+            //Função que inicia ou para a animação
+            function controle(){
+                if(estado){
+                    estado = 0;
+                    animacao();
+                }
+                else{
+                    estado = 1;
+                    cancelAnimationFrame(anima); 
+                }
+            }
+
+            //Função que faz a animação
+            function animacao(){
+                px += dx * vel;
+                
+                if(px > 800){
+                    dx = -1;
+                }
+                else if( px < 0){
+                    dx = 1;
+                }
+
+                jog.style.left = px + "px";
+
+                anima = requestAnimationFrame(animacao);
+            }
+            
+            window.addEventListener("load", chamadas);
+        </script>
+    </head>
+    <body>
+        <button id="go">Iniciar</button>
+        <button id="stop">Parar</button>
+        <div id="jogador"></div>
+    </body>
+</html>

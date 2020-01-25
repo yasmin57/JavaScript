@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        
+    </head>
+    <body>
+        <form action="" method="POST" name="frmExemple" id="form">
+            <p> Nome </p>
+            <input type="text" name="txtnome" value="Primeiro" id="nome">  <br>
+            <p> Senha</p>
+            <input type="password" name="txtsenha" value="123" id="senha"> <br><br>
+            <input type="submit" name="btnenviar" value="enviar">
+        </form>
+        <script>
+            //Manipulando Forms com Javascript
+
+            // document.forms -> retorna um array com os formulários da pag
+            // document.forms.item(0) ou document.forms.namedItem(idForm)
+            var method1 = document.forms[0];
+            var method2 = document.getElementById("form");
+
+            //Retorna um array com os elementos
+            var elementos = method1.elements;
+
+            var nome = elementos[0];
+            
+            nome.value="Teste";
+            nome.style.backgroundColor= "#ddd";
+
+
+            document.write(nome.id);
+        </script>
+    </body>
+</html>

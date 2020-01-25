@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <style>
+           #rel{
+               text-align: center;
+               color: #0f0;
+               font-weight: bold;
+               font-size: 25px;
+               background-color: black;
+               font-family: "Glasgow Heavy";
+               width: 130px;
+           }
+        </style>
+        <script>
+            function relogio(){
+                var date = new Date();
+
+                var hor = date.getHours();
+                var min = date.getMinutes();
+                var seg = date.getSeconds();
+
+                if(hor < 10){
+                    hor = "0" + hor; 
+                }
+
+                if(min < 10){
+                    min = "0" + min;
+                }
+
+                if(seg < 10){
+                    seg = "0" + seg;
+                }
+
+                var hora = hor +":"+ min +":"+ seg;
+
+                document.getElementById("rel").value = hora;
+            }
+
+            var tempo = setInterval(relogio, 1000);
+        </script>
+    </head>
+    <body>
+        <input type="text" id="rel">
+    </body>
+</html>

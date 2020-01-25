@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> CFB Cursos - Javascript </title>
+        <meta charset="utf-8" />
+        <script>
+            /*
+                Anotação:
+                Comandos: 
+                        join -> Junta todos os elementos de um array, separados por virgula
+                        em uma var do tipo String 
+                        Concat -> Concatena/junta dois arrays em um
+                        lenght -> retorna a qntd de elementos de um array
+
+                        indexof -> indica se existe determinado elemento no array, 
+                        retorna -1 caso for false e o indice caso for true
+
+                        sort -> ordena os elementos do array
+                        reverse -> reverte a ordem dos elementos do array
+            */
+
+            // INDEXOF
+            var mochila1 = [];
+
+            //Atribui valores a mochila1
+            mochila1.push("Faca");
+            mochila1.push("Corda");
+            mochila1.push("Enxada");
+            mochila1.push("Chave");
+            mochila1.push("Lanterna");
+            mochila1.push("Pedra");
+
+            //Busca por o item Lanterna
+            var busca = mochila1.indexOf("Lanterna");
+
+            //Verifica se existe o item
+            if(busca < 0)
+                document.write("Item não esta na mochila");
+            else
+                document.write("Item esta na mochila, no indice "+busca);
+
+
+            // SORT E REVERSE
+            var num = [0, 9, 5, 1, 2, 4, 8, 7, 6, 3];
+
+            //Guarda o valor da qntd de items do array num e cria o contador
+            var tamanho = num.length;
+            var cont = 0;
+
+            //Ordena os elementos e reverte essa ordem do array num
+            var ordem = num.sort();
+            ordem = ordem.reverse();
+
+            //Imprime na tela cada elemento
+            while(cont < tamanho){
+                document.write("<br>"+ordem[cont]);
+                cont++;
+            }
+
+            //JOIN
+            var numeros = num.join();
+            document.write("<br>"+numeros);
+            
+            //CONCAT
+            var mochila2 = [], mochila = [];
+
+            //Atribui valores a mochila2
+            mochila2.push("Arame");
+            mochila2.push("Canivete");
+            mochila2.push("Luvas");
+            mochila2.push("Meias");
+            mochila2.push("Bota");
+            mochila2.push("Moeda");
+
+            mochila = mochila1.concat(mochila2);
+
+            var tamanho = mochila.length;
+            var cont = 0;
+
+            while(cont < tamanho){
+                document.write("<br>"+mochila[cont]);
+                cont++;
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
