@@ -1,3 +1,4 @@
+//Recuperando elementos html
 const $minimo = document.getElementById("minimo");
 const $maximo = document.getElementById("maximo");
 const $pares = document.getElementById("pares");
@@ -6,35 +7,32 @@ const $primo = document.getElementById("primo");
 const $fibo = document.getElementById("fibonacci");
 const $resultado = document.getElementById("resultado");
 
-const ePar = (num) => num % 2 === 0;
-
 const exibirResultado = (arr, el) => {
     el.value = arr.join("\n");
 }
+
+const ePar = (num) => num % 2 === 0;
 
 const listarPares = () => {
     let cont = 0;
     let num = 1;
     let pares = [];
+    
     while ( cont < $maximo.value){
+
         if (ePar(num) ){
             cont++;
             if(cont >= $minimo.value){
                 pares.push(cont + " - " +num);
             }
         }
+        
         num++;
     }
-    console.log(pares);
+
     exibirResultado(pares, $resultado);
 }
 const fatorial = (num) => {
-    // let fat = 1; 
-    // while (num >=1){
-    //     fat = fat * num;
-    //     num--;
-    // }
-    // return fat;
     if(num == 1){
         return 1;
     } else{
@@ -52,34 +50,47 @@ const listarFatorial = () =>{
     exibirResultado(arrFatorial, $resultado);
 }
 
-const primo = (num) =>{
-    let contador = 2;
-    let referencia = true;
-    if(num==1){
-        referencia = false;
+const ePrimo = (num) =>{
+    let cont = 2;
+    let ref = true;
+
+    //Verifica se num é igual a 1
+    if(num == 1){
+        return false
     }
     else{
-        while(contador < num){
-            if(num%contador==0)
-            {
-                referencia = false;
+        //Enquanto cont for menor que o num
+        while(cont < num){
+
+            //verifica se o num é divisivel pelo cont
+            if(num % cont == 0){
+                ref = false; 
             }
-            contador++;
+                
+            cont++;
         }
-    }   
-    if(referencia == true){
-         return num;
-    }
+    }  
+ 
+    return ref;
 }
 
 const listarPrimos = () =>{
+
     let num = $minimo.value;
-    arrPrimo = [];
+    primos = [];
+
+    //Enquanto num for menor/igual ao max
     while (num <= $maximo.value){
-        arrPrimo.push(primo(num));
+
+        //Verifica se é primo
+        if(ePrimo(num))
+            primos.push(num); //add no array
+
         num++;
     }
-    exibirResultado(arrPrimo, $resultado);
+
+    console.log(primos);
+    exibirResultado(primos, $resultado);
 }
 
 const fibo = (num) =>{
